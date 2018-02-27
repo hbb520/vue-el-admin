@@ -33,6 +33,7 @@
             </el-submenu>
             <el-submenu index="2">
               <template slot="title">
+
                 <i class="el-icon-menu"></i>
                 <span slot="title">导航二</span>
               </template>
