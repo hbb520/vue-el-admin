@@ -29,7 +29,9 @@
               <el-menu-item index="/example/editor" :route="{path:'/example/editor'}">
                 editor
               </el-menu-item>
-
+              <el-menu-item index="/example/timeline" :route="{path:'/example/timeline'}">
+                timeline
+              </el-menu-item>
             </el-submenu>
             <el-submenu index="2">
               <template slot="title">
@@ -68,6 +70,8 @@
         </transition>
       </div>
     </div>
+    <back-top></back-top>
+
   </div>
 </template>
 
@@ -75,12 +79,14 @@
   import Breadcrumb from '@/components/Breadcrumb'
   import Hamburger from '@/components/Hamburger'
   import ScrollBar from '@/components/ScrollBar'
+  import BackTop from '@/components/back-top'
 
   export default {
     components: {
       Breadcrumb,
       Hamburger,
-      ScrollBar
+      ScrollBar,
+      BackTop
     },
     name: 'home',
     data() {
@@ -88,6 +94,7 @@
         loading: false,
         pwdType: 'password',
         isCollapse: false,
+
       }
     },
     methods: {

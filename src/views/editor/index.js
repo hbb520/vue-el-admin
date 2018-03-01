@@ -17,6 +17,7 @@ export default {
     };
   },
   created() {
+    console.log('created')
 
   },
   methods: {
@@ -42,5 +43,8 @@ export default {
           console.log(err);
         });
     }
+  },
+  mounted() {
+   console.log('mounted')
   }
 };

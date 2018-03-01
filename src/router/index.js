@@ -1,14 +1,19 @@
+// const Table = () => import() 懒加载
+
 import Vue from 'vue';
 import Router from 'vue-router';
 import Login from '@/views/login';
-import Home from '@/views/home';
-import Table from '@/views/basics-table/index.vue';
-import TableAdd from '../views/basics-table/add.vue';
-import Upload from '../views/upload/index.vue';
-import Editor from '../views/editor/index.vue';
+const Home = () => import('../views/home/index.vue');
+const Table = () => import('../views/basics-table/index.vue');
+const TableAdd = () => import('../views/basics-table/add.vue');
+const Timeline = () => import('../views/timeline/index.vue');
+const Editor = () => import('../views/editor/index.vue');
+const Upload = () => import('../views/upload/index.vue');
+
 Vue.use(Router);
 
 export default new Router({
+  scrollBehavior: () => ({y: 0}),
   routes: [
     {path: '/', component: Login},
     {path: '/login', component: Login},
@@ -42,6 +47,11 @@ export default new Router({
           name: 'editor',
           component: Editor,
           meta: {title: '富文本'}
+        }, {
+          path: 'timeline',
+          name: 'timeline',
+          component: Timeline,
+          meta: {title: '时间轴'}
         }
       ]
     },

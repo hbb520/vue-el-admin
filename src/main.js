@@ -13,10 +13,11 @@ import '@/styles/index.scss' // global css
 import moment from 'moment';
 Object.defineProperty(Vue.prototype, '$moment', { value: moment });
 
-// import '@/permission' // permission control
+import '@/permission' // permission control
 //size   ---  全局大小
 Vue.use(ElementUI, {size: 'medium'})
 Vue.config.productionTip = false
+
 
 /* eslint-disable no-new */
 new Vue({
